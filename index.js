@@ -60,8 +60,10 @@ function handleWhatsappMessage(groupJid, messageContent, supposedAuthor) {
   switch(messageContent) {
     case "!ping":
       sendWhatsappMessage(groupJid, "pong", me);
+      break;
     case "!status":
       sendWhatsappMessage(groupJid,  `I am ${(discordStatus == true)  ? "" : "not"} connected to the discord.`, me);
+      break;
     default:
       const channel = guild.channels.cache.find(ch => ch.name === groupIdName[groupJid].subject.toLowerCase());
       console.log("HERE GOES CHANNEP\n\n\n\n", channel);
